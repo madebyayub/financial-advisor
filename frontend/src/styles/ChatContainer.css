@@ -1,0 +1,50 @@
+.chat-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.chat-container.welcome-state {
+  justify-content: center;
+}
+
+.input-section {
+  background: white;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loading-indicator {
+  padding: 10px 20px;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+.error-message {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #ffebee;
+  color: #c62828;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .chat-container {
+    border-radius: 0;
+  }
+  
+  .welcome-state .input-form {
+    width: 90%;
+  }
+} 

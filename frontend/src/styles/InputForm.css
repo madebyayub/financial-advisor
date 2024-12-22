@@ -1,0 +1,160 @@
+.input-container {
+  padding: 20px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.input-form {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #f8f9fa;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.file-preview {
+  padding: 8px 16px 0px 16px;
+  background-color: transparent;
+}
+
+.file-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background-color: transparent;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  font-size: 0.85em;
+}
+
+.file-icon {
+  margin-right: 6px;
+  font-size: 1em;
+}
+
+.file-name {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #2c3e50;
+}
+
+.remove-file {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 2px 6px;
+  margin-left: 4px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.remove-file:hover {
+  opacity: 1;
+  color: #d32f2f;
+}
+
+.input-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+}
+
+.message-input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  background: transparent;
+}
+
+.message-input::placeholder {
+  color: #666;
+  opacity: 0.7;
+}
+
+.upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  border-radius: 24px;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: none;
+  border-radius: 28px;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.send-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.upload-button:hover, .send-button:hover {
+  background-color: #eef1f4;
+}
+
+.upload-button:disabled, .send-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Welcome state specific styles */
+.welcome-state .input-container {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(50%);
+}
+
+.welcome-state .input-form {
+  width: 60%;
+}
+ 
