@@ -17,24 +17,9 @@ const InputForm = ({ onSubmit, disabled }) => {
     
     if (!(currentInput.trim() || files.length > 0)) return;
 
-    const formFileData = new FormData();
-    for (const file of files) {
-      formFileData.append('file', file);
-    }
-
     try {
-      let fileAnalysis = null;
-      if (files.length > 0) {
-        const response = await axios.post('http://localhost:3001/chat/analyze', formFileData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        });
-        fileAnalysis = response.data.analyses;
-      }
-
       // Send message and files to parent component
-      await onSubmit(currentInput.trim(), files, fileAnalysis);
+      await onSubmit(currentInput.trim(), files);
       
       // Reset form state
       setCurrentInput('');

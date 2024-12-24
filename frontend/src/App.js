@@ -24,9 +24,19 @@ function ChatView() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:3001/chat/message', {
-        message,
-        files: files ? files.map(f => ({ name: f.name, type: f.type, analysis: f.analysis })) : []
+      const formData = new FormData();
+      formData.append('message', message);
+      
+      if (files) {
+        files.forEach((file, index) => {
+          formData.append('documents', file);
+        });
+      }
+
+      const response = await axios.post('http://localhost:3001/chat/message', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
       setMessages(prev => [...prev, `AI: ${response.data.response}`]);
     } catch (error) {
